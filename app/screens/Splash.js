@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../components/Container';
 import { Text, Image } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { setTimeout } from 'core-js/library/web/timers';
 
 const styles = EStyleSheet.create({
   image: {
@@ -11,6 +12,10 @@ const styles = EStyleSheet.create({
 });
 
 class Splash extends React.Component {
+  componentDidMount() {
+    setTimeout(() => this.props.navigation.navigate('Land'), 3000);
+  }
+
   render() {
     return (
       <Container green center>
