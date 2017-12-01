@@ -1,16 +1,8 @@
-import React, { Component } from 'react';
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Body,
-  Text
-} from 'native-base';
+import React, { Component } from 'react'
+import { Container, Content, Card, CardItem, Body, Text } from 'native-base'
 
 export default class Home extends Component {
-  render() {
+  render () {
     return (
       <Container>
         <Content>
@@ -31,6 +23,6 @@ export default class Home extends Component {
           </Card>
         </Content>
       </Container>
-    );
+    )
   }
 }
