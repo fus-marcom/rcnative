@@ -1,8 +1,8 @@
-import { StackNavigator } from 'react-navigation';
-import { Constants } from 'expo';
+import { StackNavigator } from 'react-navigation'
+import { Constants } from 'expo'
 
-import SplashScreen from '../screens/Splash';
-import HomeScreen from '../screens/Home';
+import SplashScreen from '../screens/Splash'
+import HomeScreen from '../screens/Home'
 
 export default StackNavigator({
   Home: {
@@ -20,4 +20,4 @@ export default StackNavigator({
       headerLeft: null
     }
   }
-});
+})
