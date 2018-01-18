@@ -1,23 +1,22 @@
 import { StackNavigator } from 'react-navigation'
-import { Constants } from 'expo'
-
+// import { Constants } from 'expo'
 import SplashScreen from '../screens/Splash'
-import HomeScreen from '../screens/Home'
+import DrawerRoute from './DrawerRoute'
 
-export default StackNavigator({
-  Home: {
-    screen: SplashScreen,
-    navigationOptions: {
-      header: () => null,
-      headerTitle: 'Home'
+const FirstNav = StackNavigator(
+  {
+    Home: {
+      screen: SplashScreen
+    },
+    Drawer: {
+      screen: DrawerRoute
     }
   },
-  Land: {
-    screen: HomeScreen,
-    navigationOptions: {
-      headerStyle: { marginTop: Constants.statusBarHeight },
-      headerTitle: 'Resource Center',
-      headerLeft: null
-    }
+  // default config for all screen
+  {
+    headerMode: 'none',
+    initialRouteName: 'Home'
   }
-})
+)
+
+export default FirstNav

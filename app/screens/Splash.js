@@ -13,7 +13,7 @@ const styles = EStyleSheet.create({
 
 class Splash extends React.Component {
   componentDidMount () {
-    setTimeout(() => this.props.navigation.navigate('Land'), 3000)
+    setTimeout(() => this.props.navigation.navigate('Drawer'), 3000)
   }
 
   render () {
