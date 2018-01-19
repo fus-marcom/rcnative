@@ -1,24 +1,56 @@
 import React from 'react'
-import { Text } from 'react-native'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
+import { Icon } from 'native-base'
 import HomeScreen from '../screens/Home'
+import About from '../screens/About'
+import DrawerContainer from '../components/Container/DrawerContainer'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
-const DrawerNav = DrawerNavigator({
-  Land: { screen: HomeScreen }
+const styles = EStyleSheet.create({
+  header: {
+    backgroundColor: '$primary',
+    justifyContent: 'center'
+  },
+  hambergueMenu: {
+    color: 'white',
+    paddingLeft: 10
+  }
 })
 
+const DrawerNav = DrawerNavigator(
+  {
+    Home: {
+      screen: HomeScreen
+    },
+    About: {
+      screen: About
+    }
+  },
+  {
+    gesturesEnabled: false,
+    contentComponent: DrawerContainer
+  }
+)
+
+// I use this to define the global header of all screen how use DrawerNavigator that is above
 const DrawerRoute = StackNavigator(
   {
     NextNavigation: { screen: DrawerNav }
   },
   {
     headerMode: 'float',
+    gesturesEnabled: false,
     navigationOptions: ({ navigation }) => ({
-      headerStyle: { backgroundColor: '#4C3E54' },
-      title: 'Home!',
+      headerStyle: styles.header,
+      title: 'Home',
       headerTintColor: 'white',
       headerLeft: (
-        <Text onPress={() => navigation.navigate('DrawerOpen')}>Menu</Text>
+        <Icon
+          style={styles.hambergueMenu}
+          ios="ios-menu"
+          android="md-menu"
+          onPress={() => navigation.navigate('DrawerToggle')}
+        />
       )
     })
   }

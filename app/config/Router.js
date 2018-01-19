@@ -3,7 +3,7 @@ import { StackNavigator } from 'react-navigation'
 import SplashScreen from '../screens/Splash'
 import DrawerRoute from './DrawerRoute'
 
-const FirstNav = StackNavigator(
+const Router = StackNavigator(
   {
     Home: {
       screen: SplashScreen
@@ -12,11 +12,11 @@ const FirstNav = StackNavigator(
       screen: DrawerRoute
     }
   },
-  // default config for all screen
+  // default config for all screen wich use StackNavigator
   {
     headerMode: 'none',
     initialRouteName: 'Home'
   }
 )
 
-export default FirstNav
+export default Router
