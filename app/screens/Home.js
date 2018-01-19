@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Container, Content, Card, CardItem, Body, Text } from 'native-base'
 
 export default class Home extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Home'
+  })
   render () {
     return (
       <Container>
