@@ -11,7 +11,7 @@ const styles = EStyleSheet.create({
     backgroundColor: '$primary',
     justifyContent: 'center'
   },
-  hambergueMenu: {
+  hamburgerIcon: {
     color: 'white',
     paddingLeft: 10
   }
@@ -46,7 +46,7 @@ const DrawerRoute = StackNavigator(
       headerTintColor: 'white',
       headerLeft: (
         <Icon
-          style={styles.hambergueMenu}
+          style={styles.hamburgerIcon}
           ios="ios-menu"
           android="md-menu"
           onPress={() => navigation.navigate('DrawerToggle')}
