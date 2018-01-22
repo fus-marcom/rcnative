@@ -39,7 +39,6 @@ const DrawerRoute = StackNavigator(
   },
   {
     headerMode: 'float',
-    gesturesEnabled: false,
     navigationOptions: ({ navigation }) => ({
       headerStyle: styles.header,
       title: 'Home',
@@ -51,7 +50,8 @@ const DrawerRoute = StackNavigator(
           android="md-menu"
           onPress={() => navigation.navigate('DrawerToggle')}
         />
-      )
+      ),
+      gesturesEnabled: false
     })
   }
 )
