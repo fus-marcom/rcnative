@@ -11,14 +11,12 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 const styles = EStyleSheet.create({
   header: {
     backgroundColor: '$primary',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
   },
   hamburgerIcon: {
     color: 'white',
     paddingLeft: 10
-  },
-  customAndroidHeader: {
-    marginTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
   }
 })
 
