@@ -1,4 +1,6 @@
 import React from 'react'
+import { Platform } from 'react-native'
+import { Constants } from 'expo'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
 import HomeScreen from '../screens/Home'
@@ -9,7 +11,8 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 const styles = EStyleSheet.create({
   header: {
     backgroundColor: '$primary',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
   },
   hamburgerIcon: {
     color: 'white',
