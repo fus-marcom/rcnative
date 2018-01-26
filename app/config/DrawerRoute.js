@@ -1,4 +1,6 @@
 import React from 'react'
+import { Platform } from 'react-native'
+import { Constants } from 'expo'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
 import HomeScreen from '../screens/Home'
@@ -14,6 +16,9 @@ const styles = EStyleSheet.create({
   hamburgerIcon: {
     color: 'white',
     paddingLeft: 10
+  },
+  customAndroidHeader: {
+    marginTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
   }
 })
 
