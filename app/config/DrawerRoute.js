@@ -12,7 +12,7 @@ const styles = EStyleSheet.create({
   header: {
     backgroundColor: '$primary',
     justifyContent: 'center',
-    marginTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
+    paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
   },
   hamburgerIcon: {
     color: 'white',
