@@ -5,6 +5,7 @@ const capSplitFirstLetter = title => {
   if (title !== ' ' && title.length >= 1) {
     return title.substring(0, 1).toUpperCase()
   }
+  return ' '
 }
 
 const FlatBanner = props => (
