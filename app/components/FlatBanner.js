@@ -3,9 +3,7 @@ import { View, Text } from 'react-native'
 
 const capSplitFirstLetter = title => {
   if (title !== ' ' && title.length >= 1) {
-    var word
-    word = title.substring(0, 1)
-    return word.toUpperCase()
+    return title.substring(0, 1).toUpperCase()
   }
 }
 
