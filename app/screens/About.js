@@ -1,26 +1,40 @@
 import React, { Component } from 'react'
-import { Container, Content, Card, CardItem, Body, Text } from 'native-base'
+import BigSubMenuContainer from '../components/Container/bigSubMenuContainer/BigSubMenuContainer'
 
-export default class About extends Component {
+const Items = [
+  { name: 'Academically Excellent', Id: 1, detailScreen: 'AboutDetail' },
+  { name: 'Passionately Catholic', Id: 2, detailScreen: 'AboutDetail' },
+  { name: 'Our Vision and Charisms', Id: 3, detailScreen: 'AboutDetail' },
+  { name: 'Our Mission4', Id: 4, detailScreen: 'AboutDetail' },
+  { name: 'Strategic Planning', Id: 5, detailScreen: 'AboutDetail' },
+  { name: 'History', Id: 6, detailScreen: 'AboutDetail' },
+  { name: 'Franciscans TOR', Id: 7, detailScreen: 'AboutDetail' },
+  { name: 'Contact Us', Id: 8, detailScreen: 'AboutDetail' }
+]
+class About extends Component {
+  /* constructor (props) {
+    super(props)
+    // the state object suggestion to look like the const Item above
+  } */
+
   static navigationOptions = ({ navigation }) => ({
-    headerTitle: 'About'
+    headerTitle: ''
   })
+
+  ComponentDidMount () {
+    // do a http reques to get the data to display in the component
+  }
+
   render () {
     return (
-      <Container>
-        <Content>
-          <Card>
-            <CardItem>
-              <Body>
-                <Text>
-                  Cumque, eveni Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. et ex illum, ab laboriosam hic pariatur
-                </Text>
-              </Body>
-            </CardItem>
-          </Card>
-        </Content>
-      </Container>
+      <BigSubMenuContainer
+        imageurl={''}
+        title={'About'}
+        items={Items}
+        navigation={this.props.navigation}
+      />
     )
   }
 }
+
+export default About

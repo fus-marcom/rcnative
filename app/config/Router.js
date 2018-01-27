@@ -1,8 +1,9 @@
 import { Animated, Easing } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 // import { Constants } from 'expo'
-import SplashScreen from '../screens/Splash'
+// import SplashScreen from '../screens/Splash'
 import DrawerRoute from './DrawerRoute'
+import Home from '../screens/Home'
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -15,7 +16,7 @@ const noTransitionConfig = () => ({
 const Router = StackNavigator(
   {
     Home: {
-      screen: SplashScreen
+      screen: Home
     },
     Drawer: {
       screen: DrawerRoute
