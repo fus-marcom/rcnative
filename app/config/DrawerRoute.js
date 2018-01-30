@@ -7,6 +7,7 @@ import HomeScreen from '../screens/Home'
 import About from '../screens/About'
 import DrawerContainer from '../components/Container/DrawerContainer'
 import EStyleSheet from 'react-native-extended-stylesheet'
+import AboutDetail from '../screens/AboutDetail'
 
 const styles = EStyleSheet.create({
   header: {
@@ -38,7 +39,8 @@ const DrawerNav = DrawerNavigator(
 // I use this to define the global header of all screen how use DrawerNavigator that is above
 const DrawerRoute = StackNavigator(
   {
-    NextNavigation: { screen: DrawerNav }
+    NextNavigation: { screen: DrawerNav },
+    AboutDetail: { screen: AboutDetail }
   },
   {
     headerMode: 'float',
