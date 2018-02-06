@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation'
 // import { Constants } from 'expo'
 import SplashScreen from '../screens/Splash'
 import DrawerRoute from './DrawerRoute'
+// import About from '../screens/About'
 
 const noTransitionConfig = () => ({
   transitionSpec: {

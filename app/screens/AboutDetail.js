@@ -1,27 +1,20 @@
 import React, { Component } from 'react'
-import { View, Text, Image } from 'react-native'
 import { Icon } from 'native-base'
-import Container from '../components/Container/Container'
+import DetailTextContainer from '../components/Container/detailTextContainer/DetailTextContainer'
 
+const text = `Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.`
 const styles = {
   arrowStyle: {
     paddingLeft: 6,
-    paddingBottom: 3
-  },
-  container: {
-    flexDirection: 'column',
-    flex: 1
-  },
-  body: {
-    flexDirection: 'column',
-    flex: 2
-  },
-  image: {
-    width: 220,
-    height: 80
+    paddingBottom: 3,
+    color: 'white'
   }
 }
 class AboutDetail extends Component {
+  componentDidMount () {
+    // do a http reques to get the data to display in the component
+  }
+
   static navigationOptions = ({ navigation }) => ({
     headerTitle: '',
     headerLeft: (
@@ -35,20 +28,7 @@ class AboutDetail extends Component {
   })
 
   render () {
-    return (
-      <View style={styles.container}>
-        <Container green center>
-          <Image
-            resizeMode="stretch"
-            style={styles.image}
-            source={require('../assets/logo.png')}
-          />
-        </Container>
-        <View style={styles.body}>
-          <Text>Hello</Text>
-        </View>
-      </View>
-    )
+    return <DetailTextContainer title={'Title'} text={text} />
   }
 }
 

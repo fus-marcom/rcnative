@@ -1,63 +1,40 @@
 import React, { Component } from 'react'
-import { View, Image, ScrollView } from 'react-native'
-import Container from '../components/Container/Container'
-import FlatBanner from '../components/FlatBanner'
-import EStyleSheet from 'react-native-extended-stylesheet'
+import BigSubMenuContainer from '../components/Container/bigSubMenuContainer/BigSubMenuContainer'
 
-const styles = EStyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    flex: 1
-  },
-  body: {
-    flexDirection: 'column',
-    flex: 2
-  },
-  image: {
-    width: 220,
-    height: 80
-  }
-})
-
-const Names = [
-  { name: 'Academically Excellent', subtitle: 'sub name 1' },
-  { name: 'Passionately Catholic', subtitle: 'sub name 2' },
-  { name: 'Our Vision and Charisms', subtitle: 'sub name 3' },
-  { name: 'Our Mission4', subtitle: 'sub name 4' },
-  { name: 'Strategic Planning', subtitle: 'sub name 5' },
-  { name: 'History', subtitle: 'sub name 6' },
-  { name: 'Franciscans TOR', subtitle: 'sub name 7' },
-  { name: 'Contact Us', subtitle: 'sub name 8' }
+const Items = [
+  { name: 'Academically Excellent', Id: 1, detailScreen: 'AboutDetail' },
+  { name: 'Passionately Catholic', Id: 2, detailScreen: 'AboutDetail' },
+  { name: 'Our Vision and Charisms', Id: 3, detailScreen: 'AboutDetail' },
+  { name: 'Our Mission4', Id: 4, detailScreen: 'AboutDetail' },
+  { name: 'Strategic Planning', Id: 5, detailScreen: 'AboutDetail' },
+  { name: 'History', Id: 6, detailScreen: 'AboutDetail' },
+  { name: 'Franciscans TOR', Id: 7, detailScreen: 'AboutDetail' },
+  { name: 'Contact Us', Id: 8, detailScreen: 'AboutDetail' }
 ]
-export default class About extends Component {
+class About extends Component {
+  /* constructor (props) {
+    super(props)
+    // the state object suggestion to look like the const Item above
+  } */
+
   static navigationOptions = ({ navigation }) => ({
-    headerTitle: 'About'
+    headerTitle: ''
   })
 
+  ComponentDidMount () {
+    // do a http reques to get the data to display in the component
+  }
+
   render () {
-    console.log(this.props)
     return (
-      <View style={styles.container}>
-        <Container green center>
-          <Image
-            resizeMode="stretch"
-            style={styles.image}
-            source={require('../assets/logo.png')}
-          />
-        </Container>
-        <View style={styles.body}>
-          <ScrollView>
-            {Names.map((item, index) => (
-              <FlatBanner
-                navigation={this.props.navigation.navigate}
-                key={index}
-                title={item.name}
-                subtitle={item.subtitle}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      </View>
+      <BigSubMenuContainer
+        imageurl={''}
+        title={'About'}
+        items={Items}
+        navigation={this.props.navigation}
+      />
     )
   }
 }
+
+export default About
